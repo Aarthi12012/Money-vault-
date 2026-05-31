@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>😊 Mood Constellation</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.moods{
+margin-top:30px;
+}
+
+button{
+font-size:30px;
+padding:15px;
+margin:10px;
+border:none;
+border-radius:15px;
+cursor:pointer;
+}
+
+#galaxy{
+margin-top:40px;
+min-height:300px;
+background:rgba(255,255,255,0.05);
+border-radius:20px;
+position:relative;
+overflow:hidden;
+}
+
+.star{
+position:absolute;
+font-size:25px;
+animation:float 3s infinite alternate;
+}
+
+@keyframes float{
+from{
+transform:translateY(0px);
+}
+to{
+transform:translateY(-15px);
+}
+}
+
+a{
+display:inline-block;
+margin-top:20px;
+padding:10px 20px;
+background:#22c55e;
+color:white;
+text-decoration:none;
+border-radius:10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>😊 Mood Constellation</h1>
+
+<p>Select your mood and create your personal galaxy.</p>
+
+<div class="moods">
+
+<button onclick="addMood('😊')">😊</button>
+
+<button onclick="addMood('😎')">😎</button>
+
+<button onclick="addMood('🤩')">🤩</button>
+
+<button onclick="addMood('😢')">😢</button>
+
+<button onclick="addMood('😡')">😡</button>
+
+</div>
+
+<div id="galaxy"></div>
+
+<a href="index.html">🏠 Back Home</a>
+
+</div>
+
+<script>
+
+function addMood(emoji){
+
+const galaxy=
+document.getElementById("galaxy");
+
+const star=
+document.createElement("div");
+
+star.className="star";
+
+star.innerHTML=emoji;
+
+star.style.left=
+Math.random()*90+"%";
+
+star.style.top=
+Math.random()*80+"%";
+
+galaxy.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>
